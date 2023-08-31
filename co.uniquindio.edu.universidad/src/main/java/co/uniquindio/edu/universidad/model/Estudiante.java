@@ -10,6 +10,19 @@ public class Estudiante {
     private double nota2;
     private double nota3;
 
+    public Estudiante (String nombre, int edad,String correo,int semestre,double nota1, double nota2, double nota3){
+        this.nombre = nombre;
+        this.edad = edad;
+        this.correo = correo;
+        this.semestre = semestre;
+        this.nota1 =nota1;
+        this.nota2 =nota2;
+        this.nota3 =nota3;
+
+    }
+    public  Estudiante(){
+    }
+
     public String getNombre() {
         return nombre;
     }
