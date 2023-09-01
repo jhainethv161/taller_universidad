@@ -23,10 +23,19 @@ public class Estudiante {
     public  Estudiante(){
     }
 
+    public double calcularMiPromedio(){
+        double nota1 = getNota1();
+        double nota2 = getNota2();
+        double nota3 = getNota3();
+
+        int cantidadNotas = 3;
+
+        double resultado = (nota1 + nota2 + nota3) / cantidadNotas;
+        return resultado;
+    }
     public String getNombre() {
         return nombre;
     }
-
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
