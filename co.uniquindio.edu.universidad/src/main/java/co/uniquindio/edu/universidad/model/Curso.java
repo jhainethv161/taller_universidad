@@ -92,4 +92,5 @@ public class Curso {
     public void setDocente(Docente docente) {
         this.docente = docente;
     }
+
 }
