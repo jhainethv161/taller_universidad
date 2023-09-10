@@ -111,8 +111,68 @@ public class Curso {
         promedioEstudiante2 = getEstudiante2().calcularMiPromedio();
         promedioEstudiante3 = getEstudiante3().calcularMiPromedio();
         promedioCurso = (promedioEstudiante1+promedioEstudiante2+promedioEstudiante3)/3;
-
         return promedioCurso;
     }
 
+
+    public double pocentajeAprobados(){
+        int cantidadEstudiantes = 3;
+        double promedioAprobaronCurso=0;
+        double  cantidadAprobados = getDocente().calcularAprobaronCurso(getEstudiante1(), getEstudiante2(), getEstudiante3());
+        promedioAprobaronCurso = (cantidadAprobados*100)/cantidadEstudiantes;
+        return promedioAprobaronCurso;
+    }
+
+    public double pocentajeReprobados(){
+        int cantidadEstudiantes = 3;
+        double promedioReprobaronCurso=0;
+        double  cantidadReprobados = getDocente().calcularReprobaronCurso(getEstudiante1(), getEstudiante2(), getEstudiante3());
+        promedioReprobaronCurso = (cantidadReprobados*100)/cantidadEstudiantes;
+        return promedioReprobaronCurso;
+    }
+
+    public double notaMenorCurso(){
+        double notaMenor =0;
+        notaMenor = getDocente().calcularNotaMenorDelCurso(getEstudiante1(), getEstudiante2(), getEstudiante3());
+        return notaMenor;
+    }
+    public double notaMayorCurso(){
+        double notaMayor =0;
+        notaMayor = getDocente().calcularNotaMayorDelCurso(getEstudiante1(), getEstudiante2(), getEstudiante3());
+        return notaMayor;
+    }
+
+    public double promedioEdadCurso(){
+        double promedioEdadCurso = 0;
+        promedioEdadCurso = getDocente().calcularPromedioEdad(getEstudiante1(), getEstudiante2(), getEstudiante3());
+        return promedioEdadCurso;
+    }
+
+    public void estudiantesNotaMayor4(){
+        String mensaje = "";
+        if (getDocente().obtenerEstudianteNotaMayor4(getEstudiante1())){
+            mensaje+="Todas las notas del estudiente "+getEstudiante1().getNombre()+"son mayores a 4.0\n";
+        }
+        if (getDocente().obtenerEstudianteNotaMayor4(getEstudiante2())){
+            mensaje+="Todas las notas del estudiente "+getEstudiante2().getNombre()+"son mayores a 4.0\n";
+        }
+        if (getDocente().obtenerEstudianteNotaMayor4(getEstudiante3())){
+            mensaje+="Todas las notas del estudiente "+getEstudiante3().getNombre()+"son mayores a 4.0\n";
+        }
+
+        System.out.println(mensaje);
+    }
+
+    public void notasMaximaEstudiantes(){
+        double notaMaximaEstudiante1 = 0;
+        double notaMaximaEstudiante2 = 0;
+        double notaMaximaEstudiante3 = 0;
+        notaMaximaEstudiante1=getDocente().obtenerNotaMaximaEstudiante(getEstudiante1());
+        notaMaximaEstudiante2=getDocente().obtenerNotaMaximaEstudiante(getEstudiante2());
+        notaMaximaEstudiante3=getDocente().obtenerNotaMaximaEstudiante(getEstudiante3());
+        System.out.println("La nota maxima de "+getEstudiante1().getNombre()+" es: "+notaMaximaEstudiante1+"\n" +
+                "La nota maxima de "+getEstudiante2().getNombre()+" es: "+notaMaximaEstudiante2+"\n"+
+                "La nota maxima de "+getEstudiante3().getNombre()+" es: "+notaMaximaEstudiante3+"\n");
+
+    }
 }

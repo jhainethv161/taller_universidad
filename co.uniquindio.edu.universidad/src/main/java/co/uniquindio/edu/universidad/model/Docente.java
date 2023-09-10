@@ -14,7 +14,7 @@ public class Docente {
         this.correo = correo;
     }
 
-    private static double calcularDefinitivaEstudiante(Estudiante estudiante) {
+    private double calcularDefinitivaEstudiante(Estudiante estudiante) {
 
         double nota1 = estudiante.getNota1();
         double nota2 = estudiante.getNota2();
@@ -26,7 +26,7 @@ public class Docente {
         return resultado;
     }
 
-    public static void mostrarDefinitivaEstudiantes(Estudiante estudiante1, Estudiante estudiante2, Estudiante estudiante3) {
+    public void mostrarDefinitivaEstudiantes(Estudiante estudiante1, Estudiante estudiante2, Estudiante estudiante3) {
 
         String mensaje = "La nota definitiva de " + estudiante1.getNombre() + " es: " + calcularDefinitivaEstudiante(estudiante1) + "\n";
         mensaje += "La nota definitiva de " + estudiante2.getNombre() + " es: " + calcularDefinitivaEstudiante(estudiante2) + "\n";
@@ -35,7 +35,7 @@ public class Docente {
         System.out.println(mensaje);
     }
 
-    public static void mostrarPromedioCurso(Estudiante estudiante1, Estudiante estudiante2, Estudiante estudiante3) {
+    public void mostrarPromedioCurso(Estudiante estudiante1, Estudiante estudiante2, Estudiante estudiante3) {
 
         double promedioEstudiante1 = calcularDefinitivaEstudiante(estudiante1);
         double promedioEstudiante2 = calcularDefinitivaEstudiante(estudiante2);
@@ -47,7 +47,7 @@ public class Docente {
         System.out.println("El promedio del Curso es: " + resultado);
     }
 
-    public static int calcularPromedioEdad(Estudiante estudiante1, Estudiante estudiante2, Estudiante estudiante3) {
+    public int calcularPromedioEdad(Estudiante estudiante1, Estudiante estudiante2, Estudiante estudiante3) {
 
         int edadEstudiante1 = estudiante1.getEdad();
         int edadEstudiante2 = estudiante2.getEdad();
@@ -59,7 +59,7 @@ public class Docente {
         return resultado;
     }
 
-    public static double calcularPromedioNota1(Estudiante estudiante1, Estudiante estudiante2, Estudiante estudiante3) {
+    public double calcularPromedioNota1(Estudiante estudiante1, Estudiante estudiante2, Estudiante estudiante3) {
 
         double nota1Estudiante1 = estudiante1.getNota1();
         double nota1Estudiante2 = estudiante2.getNota1();
@@ -71,7 +71,7 @@ public class Docente {
         return resultado;
     }
 
-    public static double calcularNotaMayorDelCurso(Estudiante estudiante1, Estudiante estudiante2, Estudiante estudiante3) {
+    public double calcularNotaMayorDelCurso(Estudiante estudiante1, Estudiante estudiante2, Estudiante estudiante3) {
 
         double nota1Estudiante1 = estudiante1.getNota1();
         double nota2Estudiante1 = estudiante1.getNota2();
@@ -116,7 +116,7 @@ public class Docente {
 
     }
 
-    public static double calcularNotaMenorDelCurso(Estudiante estudiante1, Estudiante estudiante2, Estudiante estudiante3) {
+    public double calcularNotaMenorDelCurso(Estudiante estudiante1, Estudiante estudiante2, Estudiante estudiante3) {
 
         double nota1Estudiante1 = estudiante1.getNota1();
         double nota2Estudiante1 = estudiante1.getNota2();
@@ -159,8 +159,7 @@ public class Docente {
         }
         return notaMenor;
     }
-    public static boolean verificarAprobacionCurso(Estudiante estudiante){
-
+    public boolean verificarAprobacionCurso(Estudiante estudiante){
         boolean aprobarCurso = false;
         double notaMinima = 3.0;
 
@@ -172,52 +171,36 @@ public class Docente {
         }
         return aprobarCurso;
     }
-    public static double calcularAprobaronCurso(Estudiante estudiante1,Estudiante estudiante2,Estudiante estudiante3){
-
+    public double calcularAprobaronCurso(Estudiante estudiante1,Estudiante estudiante2,Estudiante estudiante3){
         double estudiantesAprobados = 0;
-        int cantidadEstudianteCurso = 3;
-
         if (verificarAprobacionCurso(estudiante1)){
-
             estudiantesAprobados += 1;
         }
         if (verificarAprobacionCurso(estudiante2)){
-
             estudiantesAprobados += 1;
         }
         if (verificarAprobacionCurso(estudiante3)){
-
             estudiantesAprobados += 1;
         }
-
-        double porcentajeAprobado = (estudiantesAprobados * 100) / cantidadEstudianteCurso;
-
-        return porcentajeAprobado;
+        return estudiantesAprobados;
     }
-    public static double calcularReprobaronCurso(Estudiante estudiante1,Estudiante estudiante2,Estudiante estudiante3){
+    public double calcularReprobaronCurso(Estudiante estudiante1,Estudiante estudiante2,Estudiante estudiante3){
 
         double estudiantesReprobados = 0;
-        int cantidadEstudianteCurso = 3;
 
         if (!verificarAprobacionCurso(estudiante1)){
-
             estudiantesReprobados += 1;
         }
         if (!verificarAprobacionCurso(estudiante2)){
-
             estudiantesReprobados += 1;
         }
         if (!verificarAprobacionCurso(estudiante3)){
-
             estudiantesReprobados+= 1;
         }
 
-        double porcentajeReprobado = (estudiantesReprobados * 100) / cantidadEstudianteCurso;
-
-        return porcentajeReprobado;
+        return estudiantesReprobados;
     }
-    public static boolean obtenerEstudianteNotaMayor4(Estudiante estudiante){
-
+    public boolean obtenerEstudianteNotaMayor4(Estudiante estudiante){
         double nota1 = estudiante.getNota1();
         double nota2 = estudiante.getNota2();
         double nota3 = estudiante.getNota3();
@@ -231,7 +214,7 @@ public class Docente {
         }
         return notasMayor4;
     }
-    public static double obtenerNotaMaximaEstudiante(Estudiante estudiante){
+    public double obtenerNotaMaximaEstudiante(Estudiante estudiante){
 
         double nota1 = estudiante.getNota1();
         double nota2 = estudiante.getNota2();

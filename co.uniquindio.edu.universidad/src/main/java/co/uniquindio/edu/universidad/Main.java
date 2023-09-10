@@ -7,10 +7,28 @@ import co.uniquindio.edu.universidad.model.Curso;
 public class Main {
     public static void main(String[] args) {
         Curso curso = inicializaDatosPrueba();
-
         curso.mostrarInformacionEstudiante();
+        curso.estudiantesNotaMayor4();
+        curso.notasMaximaEstudiantes();
 
-        curso.promedioNotaCurso();
+        double porcentajeAprobados = curso.pocentajeAprobados();
+        System.out.println("El porcentaje de aprobacion del curso es: "+porcentajeAprobados+"%");
+
+        double porcentajeReprobados = curso.pocentajeReprobados();
+        System.out.println("El porcentaje de aprobacion del curso es: "+porcentajeReprobados+"%");
+
+        double promedioCurso = curso.promedioNotaCurso();
+        System.out.println("El promedio del curso es: "+promedioCurso);
+
+        double notaMenorCurso = curso.notaMenorCurso();
+        System.out.println("La nota menor del curso es: "+notaMenorCurso);
+
+        double notaMayorCurso = curso.notaMayorCurso();
+        System.out.println("La nota mayor del curso es: "+notaMayorCurso);
+
+        double promedioEdad = curso.promedioEdadCurso();
+        System.out.println("El promedio de edad del curso es: "+promedioEdad);
+
     }
         private static Curso inicializaDatosPrueba() {
             Estudiante estudiante1 = crearEstudiante("Juan",17, "juan@mail.com", 3, 3, 3.5, 4.5);
