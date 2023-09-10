@@ -93,4 +93,26 @@ public class Curso {
         this.docente = docente;
     }
 
+    public void mostrarInformacionEstudiante(){
+        String informacionEstudiante1 = getEstudiante1().obtenerInformacion();
+        String informacionEstudiante2 = getEstudiante2().obtenerInformacion();
+        String informacionEstudiante3 = getEstudiante3().obtenerInformacion();
+        System.out.println("Informacion de Estudiante 1: "+informacionEstudiante1);
+        System.out.println("Informacion de Estudiante 2: "+informacionEstudiante2);
+        System.out.println("Informacion de Estudiante 3: "+informacionEstudiante3);
+    }
+
+    public double promedioNotaCurso(){
+        double promedioEstudiante1 = 0.0;
+        double promedioEstudiante2 = 0.0;
+        double promedioEstudiante3 = 0.0;
+        double promedioCurso = 0.0;
+        promedioEstudiante1 = getEstudiante1().calcularMiPromedio();
+        promedioEstudiante2 = getEstudiante2().calcularMiPromedio();
+        promedioEstudiante3 = getEstudiante3().calcularMiPromedio();
+        promedioCurso = (promedioEstudiante1+promedioEstudiante2+promedioEstudiante3)/3;
+
+        return promedioCurso;
+    }
+
 }

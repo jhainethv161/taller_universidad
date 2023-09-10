@@ -33,6 +33,21 @@ public class Estudiante {
         double resultado = (nota1 + nota2 + nota3) / cantidadNotas;
         return resultado;
     }
+    public String obtenerInformacion(){
+        String informacion = "";
+
+        informacion = informacion +
+                "nombre: "+getNombre() + "\n" +
+                "edad: "+getEdad() +"\n" +
+                "correo: "+getCorreo() + "\n" +
+                "semestre: "+getSemestre() + "\n" +
+                "nota1: "+getNota1() + "\n" +
+                "nota2: "+getNota2() + "\n" +
+                "nota3: "+getNota3() + "\n";
+
+        return informacion;
+    }
+
     public String getNombre() {
         return nombre;
     }

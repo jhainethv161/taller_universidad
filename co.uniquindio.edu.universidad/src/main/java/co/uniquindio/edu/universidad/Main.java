@@ -7,7 +7,10 @@ import co.uniquindio.edu.universidad.model.Curso;
 public class Main {
     public static void main(String[] args) {
         Curso curso = inicializaDatosPrueba();
-        
+
+        curso.mostrarInformacionEstudiante();
+
+        curso.promedioNotaCurso();
     }
         private static Curso inicializaDatosPrueba() {
             Estudiante estudiante1 = crearEstudiante("Juan",17, "juan@mail.com", 3, 3, 3.5, 4.5);
